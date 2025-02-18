@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:social_adventure_ui/core/themes.dart';
+import 'package:social_adventure_ui/presentation/widgets/center_star.dart';
 import 'package:social_adventure_ui/presentation/widgets/curved_half.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Column(
             children: [
+              // top half background
               ClipPath(
                 clipper: BottomCurveClipper(),
                 child: Container(
@@ -30,6 +32,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
+                        // stars
+                        Positioned(
+                          top: 30,
+                          right: 60,
+                          child: SvgPicture.asset(
+                            'lib/presentation/images/glare.svg',
+                            height: 40,
+                            width: 40,
+                          ),
+                        ),
+                        // titled box in the background
                         Container(
                           transform: Matrix4.identity()..rotateZ(-5),
                           transformAlignment: Alignment.center,
@@ -39,8 +52,20 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: SAColors.pink,
                           ),
                         ),
+
+                        // illustration
                         Image.asset(
                           'lib/presentation/images/sa_ui_illustration-removebg.png',
+                        ),
+
+                        Positioned(
+                          bottom: 30,
+                          left: 50,
+                          child: Image.asset(
+                            'lib/presentation/images/bubbles.png',
+                            height: 40,
+                            width: 40,
+                          ),
                         ),
                       ],
                     ),
@@ -48,9 +73,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 60.0),
+                padding: const EdgeInsets.only(top: 45.0),
                 child: Column(
                   children: [
+                    // number of steps
                     Container(
                       padding: const EdgeInsets.all(6),
                       decoration: BoxDecoration(
@@ -65,6 +91,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             ?.copyWith(color: SAColors.secondary),
                       ),
                     ),
+
+                    // tagline
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 20.0),
                       child: Text(
@@ -76,6 +104,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             ?.copyWith(fontWeight: FontWeight.w900),
                       ),
                     ),
+
+                    // advance button
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
@@ -87,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       onPressed: () {},
                       child: const Icon(
-                        Icons.arrow_forward,
+                        Icons.arrow_forward_rounded,
                         color: SAColors.white,
                         size: 35,
                       ),
@@ -97,20 +127,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
-          SizedBox(
-            height: 100,
-            width: 100,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Opacity(
-                opacity: .85,
-                child: SvgPicture.asset(
-                  'lib/presentation/images/four_point_star.svg',
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
+
+          // center star
+          const CenterStar(),
         ],
       ),
     );

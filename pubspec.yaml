@@ -25,11 +25,12 @@ flutter:
 
   uses-material-design: true
   assets:
-    - lib/presentation/images/sa_ui_illustration.png
-    - lib/presentation/images/sa_ui_illustration.webp
-    - lib/presentation/images/sa_ui_illustration-removebg.png
+    - lib/presentation/images/air.png
+    - lib/presentation/images/glare.svg
+    - lib/presentation/images/bubbles.png
     - lib/presentation/images/four_point_star.svg
-    - lib/presentation/images/four_point_star.jpg
+    - lib/presentation/images/four_point_star.png
+    - lib/presentation/images/sa_ui_illustration-removebg.png
     # - images/a_dot_ham.jpeg
   # fonts:
   #   - family: Schyler
