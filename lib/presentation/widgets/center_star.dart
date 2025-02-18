@@ -14,6 +14,13 @@ class CenterStar extends StatelessWidget {
       height: 100,
       width: 100,
       decoration: BoxDecoration(
+        boxShadow: const [
+          BoxShadow(
+            blurRadius: 20,
+            spreadRadius: -6,
+            offset: Offset(3, 7),
+          ),
+        ],
         borderRadius: BorderRadius.circular(20),
         color: SAColors.black.withOpacity(.95),
       ),
