@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:social_adventure_ui/core/themes.dart';
+import 'package:social_adventure_ui/presentation/widgets/curved_half.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,28 +19,31 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Column(
             children: [
-              Container(
-                height: MediaQuery.sizeOf(context).height * .5,
-                decoration: const BoxDecoration(
-                  color: SAColors.primary,
-                ),
-                child: Center(
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Container(
-                        transform: Matrix4.identity()..rotateZ(-5),
-                        transformAlignment: Alignment.center,
-                        height: 190,
-                        width: 190,
-                        decoration: const BoxDecoration(
-                          color: SAColors.pink,
+              ClipPath(
+                clipper: BottomCurveClipper(),
+                child: Container(
+                  height: MediaQuery.sizeOf(context).height * .55,
+                  decoration: const BoxDecoration(
+                    color: SAColors.primary,
+                  ),
+                  child: Center(
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          transform: Matrix4.identity()..rotateZ(-5),
+                          transformAlignment: Alignment.center,
+                          height: 190,
+                          width: 190,
+                          decoration: const BoxDecoration(
+                            color: SAColors.pink,
+                          ),
                         ),
-                      ),
-                      Image.asset(
-                        'lib/presentation/images/sa_ui_illustration-removebg.png',
-                      ),
-                    ],
+                        Image.asset(
+                          'lib/presentation/images/sa_ui_illustration-removebg.png',
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
