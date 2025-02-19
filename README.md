@@ -11,6 +11,8 @@ This project is a Flutter-based UI implementation for a social adventure applica
 -   Notifications for new interactions
 -   Search functionality to find adventures and users
 
+![Onboarding Screen](<Simulator Screenshot - iPhone 15 - 2025-02-18 at 14.16.42.png>)
+
 ## Getting Started
 
 ### Prerequisites
